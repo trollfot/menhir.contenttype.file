@@ -7,7 +7,7 @@ from dolmen.app.content import icon
 from dolmen.app.security import content as security
 from zope.i18nmessageid import MessageFactory
 
-_ = MessageFactory('dolmen')
+_ = MessageFactory('menhir.contenttype.file')
 
 
 class IFile(content.IBaseContent):
