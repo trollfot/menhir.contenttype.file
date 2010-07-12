@@ -1,13 +1,19 @@
+from os.path import join
 from setuptools import setup, find_packages
-import os
 
-version = '1.0'
+version = '1.0b1'
+
+readme = open(join("src", "menhir", "contenttype", "file", "README.txt")).read()
+change = open(join("docs", "HISTORY.txt")).read()
+
+tests_require = [
+    'zope.component',
+    ]
 
 setup(name='menhir.contenttype.file',
       version=version,
-      description="",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      description="File content type for Grok and Dolmen applications.",
+      long_description=readme + '\n' + change,
       classifiers=[
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
@@ -22,10 +28,16 @@ setup(name='menhir.contenttype.file',
       namespace_packages=['menhir', 'menhir.contenttype'],
       include_package_data=True,
       zip_safe=False,
+      tests_require = tests_require,
+      extras_require = {'test': tests_require},
       install_requires=[
-          'setuptools',
-          'dolmen.file',
+          'dolmen.app.content',
+          'dolmen.app.security',
           'dolmen.blob',
+          'dolmen.content',
+          'dolmen.file',
+          'setuptools',
+          'zope.i18nmessageid',
       ],
       entry_points="""
       # -*- Entry points: -*-

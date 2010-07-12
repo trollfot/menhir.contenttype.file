@@ -14,9 +14,8 @@ class IFile(content.IBaseContent):
     """A simple file object.
     """
     data = FileField(
-        title = _(u"File"),
-        required = True
-        )
+        title=_(u"File"),
+        required=True)
 
 
 class File(content.Content):
