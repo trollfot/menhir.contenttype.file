@@ -40,6 +40,10 @@ its schema::
   >>> somefile.title
   u'My nice file'
 
+
+Storage
+=======
+
 The file uses a Blob storage for the data::
 
   >>> somefile.data
@@ -47,3 +51,18 @@ The file uses a Blob storage for the data::
 
   >>> print somefile.data.data
   Some file data
+
+
+Icon
+====
+
+The content registers an icon, thanks to the ``dolmen.app.content``
+package::
+
+  >>> from zope.component import getMultiAdapter
+  >>> from zope.publisher.browser import TestRequest
+
+  >>> request = TestRequest()
+  >>> icon = getMultiAdapter((somefile, request), name="icon")
+  >>> print icon
+  <zope.browserresource.icon.IconView object at ...>
