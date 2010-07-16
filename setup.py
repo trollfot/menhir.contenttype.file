@@ -1,13 +1,14 @@
 from os.path import join
 from setuptools import setup, find_packages
 
-version = '1.0b1'
+version = '0.1'
 
 readme = open(join("src", "menhir", "contenttype", "file", "README.txt")).read()
 change = open(join("docs", "HISTORY.txt")).read()
 
 tests_require = [
     'zope.component',
+    'zope.publisher',
     ]
 
 setup(name='menhir.contenttype.file',
@@ -37,6 +38,7 @@ setup(name='menhir.contenttype.file',
           'dolmen.content',
           'dolmen.file',
           'setuptools',
+          'zope.i18n',
           'zope.i18nmessageid',
       ],
       entry_points="""
