@@ -1,7 +1,7 @@
 from os.path import join
 from setuptools import setup, find_packages
 
-version = '0.1'
+version = '0.2'
 
 readme = open(join("src", "menhir", "contenttype", "file", "README.txt")).read()
 change = open(join("docs", "HISTORY.txt")).read()
