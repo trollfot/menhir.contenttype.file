@@ -1,13 +1,12 @@
 from os.path import join
 from setuptools import setup, find_packages
 
-version = '0.2'
+version = '0.3'
 
 readme = open(join("src", "menhir", "contenttype", "file", "README.txt")).read()
 change = open(join("docs", "HISTORY.txt")).read()
 
 tests_require = [
-    'zope.component',
     'zope.publisher',
     ]
 
@@ -19,10 +18,10 @@ setup(name='menhir.contenttype.file',
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
-      keywords='',
-      author='',
-      author_email='',
-      url='',
+      keywords='Grok Dolmen File Content',
+      author='Souheil Chelfouh',
+      author_email='trollfot@gmail.com',
+      url='http://pypi.python.org/pypi/menhir.contenttype.file',
       license='GPL',
       packages=find_packages('src', exclude=['ez_setup']),
       package_dir={'': 'src'},
@@ -32,13 +31,14 @@ setup(name='menhir.contenttype.file',
       tests_require = tests_require,
       extras_require = {'test': tests_require},
       install_requires=[
-          'dolmen.app.content',
+          'dolmen.app.content >= 1.0b1',
           'dolmen.app.security',
           'dolmen.blob',
-          'dolmen.content',
+          'dolmen.content >= 0.7',
           'dolmen.file',
           'setuptools',
           'zope.i18n',
+          'zope.component',
           'zope.i18nmessageid',
       ],
       entry_points="""

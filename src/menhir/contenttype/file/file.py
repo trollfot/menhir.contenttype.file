@@ -3,12 +3,12 @@
 import dolmen.content as content
 from dolmen.file import FileField
 from dolmen.blob import BlobProperty
-from dolmen.app.content import icon
+from dolmen.app.content import icon, IDescriptiveSchema
 from dolmen.app.security import content as security
 from menhir.contenttype.file import MF as _
 
 
-class IFile(content.IBaseContent):
+class IFile(IDescriptiveSchema):
     """A simple file object.
     """
     data = FileField(
